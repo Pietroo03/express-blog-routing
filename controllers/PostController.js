@@ -10,7 +10,7 @@ const index = (req, res) => {
         <ul>
             <li>
                 <div>${title}</div>
-                
+                <img src="../img/${image}" alt"">
                 <div>${content}</div>
                 <div>${tags}</div>
             <li>
@@ -25,4 +25,3 @@ module.exports = {
     index
 }
 
-{/* <img src="../img/${image}" alt""> */}
