@@ -7,7 +7,7 @@ const index = (req, res) => {
         counter: posts.length
     }
 
-    res.status(200).json(responseData)
+    res.json(responseData)
     
 }
 
