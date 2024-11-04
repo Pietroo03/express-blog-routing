@@ -22,7 +22,23 @@ const index = (req, res) => {
     res.send(html)
 }
 
+const show = (req, res) => {
+    const post = posts.find(post => post.slug === (req.params.slug))
+
+    if(!post) {
+        return res.status(404).json({
+            error: '404! Not Found'
+        })
+    }
+
+    return res.json({
+        data: post
+    })
+}
+
+
 module.exports = {
-    index
+    index,
+    show
 }
 
