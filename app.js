@@ -1,4 +1,5 @@
 const express = require('express')
+const PostsRouter = require('./routers/posts.js')
 const app = express()
 const host = 'http://127.0.0.1'
 const port = 3000
@@ -10,3 +11,5 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send('Il server funziona')
 })
+
+app.use('/', PostsRouter)
