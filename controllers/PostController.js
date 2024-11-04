@@ -1,16 +1,28 @@
 const posts = require('../data/db.js')
 
+
+
 const index = (req, res) => {
-
-    const responseData = {
-        data: posts,
-        counter: posts.length
-    }
-
-    res.json(responseData)
-    
+    let html = ''
+    posts.forEach(post => {
+        const {title, slug, content, image, tags} = post
+        const markup = `
+        <ul>
+            <li>
+                <div>${title}</div>
+                
+                <div>${content}</div>
+                <div>${tags}</div>
+            <li>
+        <ul>
+        `
+        html += markup
+        res.send(html)
+    })
 }
 
 module.exports = {
     index
 }
+
+{/* <img src="../img/${image}" alt""> */}

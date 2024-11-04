@@ -8,8 +8,4 @@ app.listen(port, () => {
     console.log(`Example app listening on ${host}:${port}`)
 })
 
-app.get('/', (req, res) => {
-    res.send('Il server funziona')
-})
-
 app.use('/', PostsRouter)
