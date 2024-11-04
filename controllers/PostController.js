@@ -1,7 +1,4 @@
-const { log } = require('console')
 const posts = require('../data/db.js')
-
-
 
 const index = (req, res) => {
     let html = ''
@@ -11,7 +8,7 @@ const index = (req, res) => {
         <ul>
             <li>
                 <h1>${title}</h1>
-                <img src="../img/${image}" alt"">
+                <img src="${image}" alt"">
                 <div>${content}</div>
                 <div>${tags}</div>
             </li>
@@ -39,6 +36,6 @@ const show = (req, res) => {
 
 module.exports = {
     index,
-    show
+    show,
 }
 
